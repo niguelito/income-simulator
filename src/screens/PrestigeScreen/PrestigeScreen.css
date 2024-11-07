@@ -1,0 +1,14 @@
+#prestige {
+    width: 50%;
+    margin: 0 auto;
+}
+
+button p {
+    margin: 0.2em;
+    padding: 0.2em;
+}
+
+#earning {
+    font-size: 1.5em;
+    font-weight: 600;
+}

@@ -1,0 +1,30 @@
+{
+  "name": "makemoney-ripoff",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "class-transformer": "^0.5.1",
+    "crypto-js": "^4.2.0",
+    "pako": "^2.1.0",
+    "reflect-metadata": "^0.2.1",
+    "string-format-ts": "^1.0.4",
+    "vue": "^3.4.13",
+    "vue-cookies": "^1.8.3"
+  },
+  "devDependencies": {
+    "@types/crypto-js": "^4.2.2",
+    "@types/node": "^20.11.5",
+    "@types/pako": "^2.0.3",
+    "@types/vue": "^2.0.0",
+    "@vitejs/plugin-vue": "^5.0.3",
+    "typescript": "^5.2.2",
+    "vite": "^5.0.11",
+    "vue-tsc": "^1.8.27"
+  }
+}
