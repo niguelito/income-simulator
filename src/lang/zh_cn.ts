@@ -146,5 +146,6 @@ export default class zh_cn implements LangLocalization {
     'upgrade.mars': '火星',
     'upgrade.solar_system': '太阳系',
     'upgrade.universe': '宇宙',
+    'upgrade.multiverse': '多元宇宙'
   };
 }

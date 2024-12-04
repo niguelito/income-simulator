@@ -146,5 +146,6 @@ export default class es_es implements LangLocalization {
     'upgrade.mars': 'Marte',
     'upgrade.solar_system': 'El Sistema Solar',
     'upgrade.universe': 'El Universo',
+    'upgrade.multiverse': 'El Multiverso'
   };
 }

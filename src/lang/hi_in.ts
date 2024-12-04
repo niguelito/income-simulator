@@ -146,5 +146,6 @@ export default class hi_in implements LangLocalization {
     'upgrade.mars': 'मंगल ग्रह',
     'upgrade.solar_system': 'सौरमंडल',
     'upgrade.universe': 'ब्रह्मांड',
+    'upgrade.multiverse': 'मल्टीवर्स'
   };
 }

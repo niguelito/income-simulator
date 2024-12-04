@@ -146,5 +146,6 @@ export default class ru_ru implements LangLocalization {
     'upgrade.mars': 'Марс',
     'upgrade.solar_system': 'Солнечная система',
     'upgrade.universe': 'Вселенная',
+    'upgrade.multiverse': 'Мультивселенная'
   };
 }

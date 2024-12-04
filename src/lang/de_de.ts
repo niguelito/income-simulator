@@ -146,5 +146,6 @@ export default class de_de implements LangLocalization {
     'upgrade.mars': 'Mars',
     'upgrade.solar_system': 'Das Sonnensystem',
     'upgrade.universe': 'Das Universum',
+    'upgrade.multiverse': 'Das Multiversum'
   };
 }

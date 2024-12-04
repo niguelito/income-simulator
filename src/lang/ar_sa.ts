@@ -146,5 +146,6 @@ export default class ar_sa implements LangLocalization {
     "upgrade.mars": "المريخ",
     'upgrade.solar_system': 'النظام الشمسي',
     'upgrade.universe': 'الكون',
+    'upgrade.multiverse': 'الكون المتعدد'
   };
 }
