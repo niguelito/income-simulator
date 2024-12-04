@@ -41,6 +41,7 @@ export class StateCache {
 
 export class GameSaveHandler {
   private static SECRET_KEY = 'YmVzdCBnYW1lIGV2ZXIgbm8gY2Fw';
+  private static name = "2cd9b225";
 
   public static createNewSave(): GameState {
     return {
@@ -102,28 +103,17 @@ export class GameSaveHandler {
 
   public static save(state: GameState) {
     const f = this.export(state);
-
-    const expirationDate = new Date('9999-12-31T23:59:59');
-
     const encodedValue = encodeURIComponent(f);
 
-    document.cookie = `save=${encodedValue}; expires=${expirationDate.toUTCString()}; path=/`;
+    localStorage.setItem(this.name, encodedValue);
   }
 
   public static load(): GameState {
     try {
-      const cookieString = document.cookie;
+      const save = localStorage.getItem(this.name);
 
-      const cookies = cookieString.split(';');
-
-      const saveCookie = cookies.find((cookie) =>
-        cookie.trim().startsWith('save=')
-      );
-
-      if (saveCookie) {
-        const encodedValue = saveCookie.split('=')[1];
-
-        const r = decodeURIComponent(encodedValue);
+      if (save) {
+        const r = decodeURIComponent(save);
 
         const p = this.parseSave(r);
 
