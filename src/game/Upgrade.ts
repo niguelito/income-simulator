@@ -98,12 +98,13 @@ export default class Upgrades {
   public WALMART = this.createUpgrade("upgrade.walmart", 437_160_000_000, 700_000_000_000, 25_000);
   public TESLA = this.createUpgrade("upgrade.tesla", 663_760_000_000, 1_200_000_000_000, 45_000);
   public MOON_LANDING = this.createUpgrade("upgrade.moon_landing", 934_300_000_000, 2_000_000_000_000, 100_000);
-  public GOOGLE = this.createUpgrade("upgrade.google", 1_900_000_000_000, 4_000_000_000_000, 5_000_000);
-  public MICROSOFT = this.createUpgrade("upgrade.microsoft", 2_800_000_000_000, 7_500_000_000_000, 7_500_000);
-  public APPLE = this.createUpgrade("upgrade.apple", 3_400_000_000_000, 10_000_000_000_000, 10_000_000);
-  public MARS = this.createUpgrade("upgrade.mars", 21_400_000_000_000, 50_000_000_000_000, 15_000_000);
-  public SOLAR_SYSTEM = this.createUpgrade("upgrade.solar_system", 403_123_000_000_000_000.0, 750_000_000_000_000_000.0, 1_000_000_000);
-  public UNIVERSE = this.createUpgrade("upgrade.universe", 403_123_000_000_000_000_000_000.0, 1_500_000_000_000_000_000_000_000.0, 100_000_000_000_000);
+  public GOOGLE = this.createUpgrade("upgrade.google", 1_900_000_000_000, 4_000_000_000_000, 10_000_000);
+  public MICROSOFT = this.createUpgrade("upgrade.microsoft", 2_800_000_000_000, 7_500_000_000_000, 1_000_000_000);
+  public APPLE = this.createUpgrade("upgrade.apple", 3_400_000_000_000, 10_000_000_000_000, 10_000_000_000);
+  public MARS = this.createUpgrade("upgrade.mars", 21_400_000_000_000, 50_000_000_000_000, 15_000_000_000_000);
+  public SOLAR_SYSTEM = this.createUpgrade("upgrade.solar_system", 403_123_000_000_000_000.0, 750_000_000_000_000_000.0, 1_000_000_000_000_000_000.0);
+  public UNIVERSE = this.createUpgrade("upgrade.universe", 403_123_000_000_000_000_000_000.0, 1_500_000_000_000_000_000_000_000.0, 100_000_000_000_000_000_000_000_000.0);
+  public MULTIVERSE = this.createUpgrade("upgrade.multiverse", 500_123_000_000_000_000_000_000_000_000_000.0, 500_123_000_000_000_000_000_000_000_000_000_000.0, 100_000_000_000_000_000_000_000_000_000_000.0)
 
   public applyJson(json: any): Upgrades {
     if (json) {
