@@ -52,7 +52,7 @@ export default defineComponent({
             
             this.state.money.spend(bidding);
 
-            const audio = new Audio("/snd/slotmachine-63035.mp3");
+            const audio = new Audio("./snd/slotmachine-63035.mp3");
             audio.play();
 
             const win = CasinoAlgorithm.generate();
@@ -98,7 +98,7 @@ export default defineComponent({
 
                     audio.pause();
 
-                    const finishAudio = new Audio("/snd/slotmachine-end-63035.mp3");
+                    const finishAudio = new Audio("./snd/slotmachine-end-63035.mp3");
                     finishAudio.play();
 
                     this.checkNavbar();
@@ -136,7 +136,7 @@ export default defineComponent({
         },
       
         playSound() {
-            const a = new Audio("/snd/interface-124464.mp3");
+            const a = new Audio("./snd/interface-124464.mp3");
             a.play();
         }
     }

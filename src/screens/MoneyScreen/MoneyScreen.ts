@@ -53,7 +53,7 @@ export default defineComponent({
     },
 
     playSound() {
-      const a = new Audio("/snd/interface-124464.mp3");
+      const a = new Audio("./snd/interface-124464.mp3");
       a.play();
     }
   }
