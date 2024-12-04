@@ -86,6 +86,16 @@ export default class CasinoAlgorithm {
             id: 8,
         },
         {
+            symbol: "🥨",
+            status: SymbolStatus.MATCHING,
+            id: 9
+        },
+        {
+            symbol: "⚀",
+            status: SymbolStatus.DICE,
+            id: 10,
+        },
+        {
             symbol: "⚁",
             status: SymbolStatus.DICE,
             id: 11,
@@ -104,11 +114,6 @@ export default class CasinoAlgorithm {
             symbol: "⚄",
             status: SymbolStatus.DICE,
             id: 14,
-        },
-        {
-            symbol: "⚅",
-            status: SymbolStatus.DICE,
-            id: 15,
         },
         {
             symbol: "🎰",

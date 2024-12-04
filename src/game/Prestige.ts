@@ -29,16 +29,11 @@ export default class Prestige {
   }
 
   public checkPrestiege(amount: number) {
-    const sortedAmounts = this.prestigeAmounts.sort((a, b) => b - a);
-    let max = 0;
-    for (let i = 0; i < sortedAmounts.length; i++) {
-      const prestige = sortedAmounts[i]
-      if (prestige < amount) {
-        max = i + 1;
-        break;
-      }
-    }
-    this.earning = Math.max(this.earning, max);
+    let earning = 0;
+    this.prestigeAmounts.forEach(a => {
+      if (amount > a) earning++;
+    });
+    this.earning = Math.max(this.earning, earning);
   }
 
   public applyMultiplier(inc: number): number {
