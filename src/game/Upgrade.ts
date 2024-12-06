@@ -102,9 +102,15 @@ export default class Upgrades {
   public MICROSOFT = this.createUpgrade("upgrade.microsoft", 2_800_000_000_000, 7_500_000_000_000, 1_000_000_000);
   public APPLE = this.createUpgrade("upgrade.apple", 3_400_000_000_000, 10_000_000_000_000, 10_000_000_000);
   public MARS = this.createUpgrade("upgrade.mars", 21_400_000_000_000, 50_000_000_000_000, 15_000_000_000_000);
-  public SOLAR_SYSTEM = this.createUpgrade("upgrade.solar_system", 403_123_000_000_000_000.0, 750_000_000_000_000_000.0, 1_000_000_000_000_000_000.0);
-  public UNIVERSE = this.createUpgrade("upgrade.universe", 403_123_000_000_000_000_000_000.0, 1_500_000_000_000_000_000_000_000.0, 100_000_000_000_000_000_000_000_000.0);
-  public MULTIVERSE = this.createUpgrade("upgrade.multiverse", 500_123_000_000_000_000_000_000_000_000_000.0, 500_123_000_000_000_000_000_000_000_000_000_000.0, 100_000_000_000_000_000_000_000_000_000_000.0)
+  public SOLAR_SYSTEM = this.createUpgrade("upgrade.solar_system", 403_123e12, 750e14, 1e11);
+  public UNIVERSE = this.createUpgrade("upgrade.universe", 403_123e18, 1_500e21, 100e19);
+  public MULTIVERSE = this.createUpgrade("upgrade.multiverse", 500_123e30, 500_123e33, 100e29)
+  public MULTIVERSAL_PORTAL = this.createUpgrade("upgrade.multiversal_portal", 100e38, 100e39, 100e33);
+  public IDLEVERSE = this.createUpgrade("upgrade.idleverse", 100e40, 100e41, 100e38);
+  public CORTEX_EARNING = this.createUpgrade('upgrade.cortex_earning', 100e45, 100e47, 100e43);
+  public REALITY_CONSOLE = this.createUpgrade('upgrade.reality_console', 100e50, 100e53, 100e48);
+  public CLONES = this.createUpgrade('upgrade.clones', 100e55, 100e60, 100e53);
+  public THE_PLAYER = this.createUpgrade('upgrade.the_player', 100e70, 100e72, 100e100)
 
   public applyJson(json: any): Upgrades {
     if (json) {
@@ -135,7 +141,14 @@ export default class Upgrades {
       this.APPLE.applyJson(json.APPLE);
       this.MARS.applyJson(json.MARS);
       this.SOLAR_SYSTEM.applyJson(json.SOLAR_SYSTEM);
-      this.UNIVERSE.applyJson(json.UNIVERSE);  
+      this.UNIVERSE.applyJson(json.UNIVERSE);
+      this.MULTIVERSE.applyJson(json.MULTIVERSE);
+      this.MULTIVERSAL_PORTAL.applyJson(json.MULTIVERSAL_PORTAL);
+      this.IDLEVERSE.applyJson(json.IDLEVERSE);
+      this.CORTEX_EARNING.applyJson(json.CORTEX_EARNING);
+      this.REALITY_CONSOLE.applyJson(json.REALITY_CONSOLE);
+      this.CLONES.applyJson(json.CLONES);
+      this.THE_PLAYER.applyJson(json.THE_PLAYER);
     }
 
     return this;

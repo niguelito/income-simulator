@@ -146,6 +146,11 @@ export default class fr_fr implements LangLocalization {
     'upgrade.mars': 'Mars',
     'upgrade.solar_system': 'Le Système solaire',
     'upgrade.universe': 'L\'Univers',
-    'upgrade.multiverse': 'Le multivers'
+    'upgrade.multiverse': 'Le multivers',
+    "upgrade.multiversal_portal": "Portail Multiversel",
+    "upgrade.idleverse": "Idleverse",
+    "upgrade.reality_console": "Console de Réalité",
+    "upgrade.clones": "Clones",
+    "upgrade.the_player": "VOUS"
   };
 }

@@ -146,6 +146,11 @@ export default class ja_jp implements LangLocalization {
     'upgrade.mars': '火星',
     'upgrade.solar_system': '太陽系',
     'upgrade.universe': '宇宙',
-    'upgrade.multiverse': 'マルチバース'
+    'upgrade.multiverse': 'マルチバース',
+    "upgrade.multiversal_portal": "多元宇宙のポータル",
+    "upgrade.idleverse": "アイドルバース",
+    "upgrade.reality_console": "リアリティコンソール",
+    "upgrade.clones": "クローン",
+    "upgrade.the_player": "あなた"
   };
 }
