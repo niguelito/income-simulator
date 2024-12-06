@@ -153,6 +153,7 @@ export default class ja_jp implements LangLocalization {
     "upgrade.reality_console": "リアリティコンソール",
     "upgrade.clones": "クローン",
     "upgrade.the_player": "あなた",
-    'upgrade.error': "WnWlar(x 收益e euc текс=n"
+    'upgrade.error': "WnWlar(x 收益e euc текс=n",
+    'upgrade.unachievable': "達成不可能"
   };
 }

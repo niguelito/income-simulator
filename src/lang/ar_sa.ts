@@ -153,6 +153,7 @@ export default class ar_sa implements LangLocalization {
     "upgrade.reality_console": "وحدة التحكم الواقعية",
     'upgrade.clones': "استنساخ",
     'upgrade.the_player': "أنت",
-    'upgrade.error': "WnWlar(x 收益e euc текс=n"
+    'upgrade.error': "WnWlar(x 收益e euc текс=n",
+    'upgrade.unachievable': "غير قابل للتحقيق"
   };
 }

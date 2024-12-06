@@ -153,6 +153,7 @@ export default class ru_ru implements LangLocalization {
     "upgrade.reality_console": "Консоль реальности",
     "upgrade.clones": "Клоны",
     "upgrade.the_player": "ТЫ",
-    'upgrade.error': "WnWlar(x 收益e euc текс=n"
+    'upgrade.error': "WnWlar(x 收益e euc текс=n",
+    'upgrade.unachievable': "Недостижимо"
   };
 }

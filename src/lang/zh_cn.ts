@@ -153,6 +153,7 @@ export default class zh_cn implements LangLocalization {
     "upgrade.reality_console": "现实控制台",
     "upgrade.clones": "克隆体",
     "upgrade.the_player": "你",
-    'upgrade.error': "WnWlar(x 收益e euc текс=n"
+    'upgrade.error': "WnWlar(x 收益e euc текс=n",
+    'upgrade.unachievable': "无法实现"
   };
 }

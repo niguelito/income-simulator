@@ -119,6 +119,8 @@ export class GameSaveHandler {
 
         StateCache.updateState(p);
 
+        console.log(p);
+
         return p;
       } else {
         const p = this.createNewSave();

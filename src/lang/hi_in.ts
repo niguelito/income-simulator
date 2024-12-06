@@ -153,6 +153,7 @@ export default class hi_in implements LangLocalization {
     "upgrade.reality_console": "रियलिटी कंसोल",
     "upgrade.clones": "क्लोन्स",
     "upgrade.the_player": "आप",
-    'upgrade.error': "WnWlar(x 收益e euc текс=n"
+    'upgrade.error': "WnWlar(x 收益e euc текс=n",
+    'upgrade.unachievable': "पहुंच से बाहर का"
   };
 }

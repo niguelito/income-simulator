@@ -153,6 +153,7 @@ export default class fr_fr implements LangLocalization {
     "upgrade.reality_console": "Console de Réalité",
     "upgrade.clones": "Clones",
     "upgrade.the_player": "VOUS",
-    'upgrade.error': "WnWlar(x 收益e euc текс=n"
+    'upgrade.error': "WnWlar(x 收益e euc текс=n",
+    'upgrade.unachievable': "Inatteignable"
   };
 }
