@@ -91,6 +91,21 @@ export default class CasinoAlgorithm {
             id: 9
         },
         {
+            symbol: "🥛",
+            status: SymbolStatus.MATCHING,
+            id: 17
+        },
+        {
+            symbol: "🥝",
+            status: SymbolStatus.MATCHING,
+            id: 18
+        },
+        {
+            symbol: "🍫",
+            status: SymbolStatus.MATCHING,
+            id: 19
+        },
+        {
             symbol: "⚀",
             status: SymbolStatus.DICE,
             id: 10,
@@ -168,14 +183,32 @@ export default class CasinoAlgorithm {
     // 3 7s = gold rush
 
     // this function is recursive, and will check for the first win it finds
-    static getWinAmount(symbols: CasinoSymbol[], currentSymbol?: number): number {
+    static getWinAmount(symbols: CasinoSymbol[], currentSymbol?: number, sevenCheck?: boolean): number {
         // there should always be 3 symbols for the 3 slots
         if (symbols.length != 3) throw new Error("Invalid symbol array length!");
         
-        if (currentSymbol == undefined) {
+        if (!sevenCheck) {
+            // 1 seven is better than 2 matching
+            // so check sevens before checking others
+            const sevens = symbols.filter((sy) => sy.status == SymbolStatus.SEVEN);
+
+            switch (sevens.length) {
+                // we have no sevens, continue
+                default: return this.getWinAmount(symbols, undefined, true);
+
+                // 1 seven = medium
+                case 1: return CasinoWin.MEDIUM;
+
+                // 2 sevens = jackpot
+                case 2: return CasinoWin.JACKPOT;
+
+                // 3 sevens = gold rush
+                case 3: return CasinoWin.GOLD_RUSH;
+            }
+        } else if (currentSymbol == undefined) {
             // if we do not have a current symbol,
             // we are at the start of the array
-            return this.getWinAmount(symbols, 0);
+            return this.getWinAmount(symbols, 0, true);
         } else if (currentSymbol >= symbols.length) {
             // if we are at the end of the array, 
             // we have not matched anything,
@@ -192,7 +225,7 @@ export default class CasinoAlgorithm {
                 case SymbolStatus.MATCHING:
                     // if we are matching, we need to check if we have any other matching symbols
                     const matching = others.filter(s => s.status == SymbolStatus.MATCHING);
-                    if (matching.length == 0) return this.getWinAmount(symbols, currentSymbol + 1);
+                    if (matching.length == 0) return this.getWinAmount(symbols, currentSymbol + 1, true);
 
                     // if we have matching symbols, we need to check if we have 2 or 3
                     const matched = matching.filter(s => s.id == symbol.id);
@@ -204,12 +237,12 @@ export default class CasinoAlgorithm {
                     else if (matched.length == 2) return CasinoWin.LARGE;
 
                     // otherwise, we have no matching symbols
-                    else return this.getWinAmount(symbols, currentSymbol + 1);
+                    else return this.getWinAmount(symbols, currentSymbol + 1, true);
 
                 case SymbolStatus.DICE:
                     // if we are a dice, we need to check if we have any other dice
                     const dice = others.filter(s => s.status == SymbolStatus.DICE);
-                    if (dice.length == 0) return this.getWinAmount(symbols, currentSymbol + 1);
+                    if (dice.length == 0) return this.getWinAmount(symbols, currentSymbol + 1, true);
 
                     // if we have other dice, we need to check if any of them match
                     const matchedDice = dice.filter(s => s.id == symbol.id);
@@ -229,20 +262,12 @@ export default class CasinoAlgorithm {
                         else if (dice.length == 2) return CasinoWin.LARGE;
 
                         // otherwise, we have no dice
-                        else return this.getWinAmount(symbols, currentSymbol + 1);
+                        else return this.getWinAmount(symbols, currentSymbol + 1, true);
                     }
+
                 default:
-                    // if we are a 7, we need to check if we have any other 7s
-                    const sevens = others.filter(s => s.status == SymbolStatus.SEVEN);
-
-                    // if array length is 1, we have 2 7s
-                    if (sevens.length == 1) return CasinoWin.JACKPOT;
-
-                    // if array length is 2, we have 3 7s
-                    else if (sevens.length == 2) return CasinoWin.GOLD_RUSH;
-
-                    // if array length is 0, we have no other 7s
-                    else return CasinoWin.MEDIUM;
+                    // we shuold never reach this scope
+                    throw new Error("Sevens checked incorrectly!")
             }
         }
     }
