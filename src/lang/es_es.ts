@@ -149,8 +149,10 @@ export default class es_es implements LangLocalization {
     'upgrade.multiverse': 'El Multiverso',
     "upgrade.multiversal_portal": "Portal Multiversal",
     "upgrade.idleverse": "Ocioverso",
+    'upgrade.cortex_earning': "Ganancias de Cortex",
     "upgrade.reality_console": "Consola de Realidad",
     "upgrade.clones": "Clones",
-    "upgrade.the_player": "TÚ"
+    "upgrade.the_player": "TÚ",
+    'upgrade.error': "WnWlar(x 收益e euc текс=n"
   };
 }

@@ -149,8 +149,10 @@ export default class ja_jp implements LangLocalization {
     'upgrade.multiverse': 'マルチバース',
     "upgrade.multiversal_portal": "多元宇宙のポータル",
     "upgrade.idleverse": "アイドルバース",
+    'upgrade.cortex_earning': "皮質収益",
     "upgrade.reality_console": "リアリティコンソール",
     "upgrade.clones": "クローン",
-    "upgrade.the_player": "あなた"
+    "upgrade.the_player": "あなた",
+    'upgrade.error': "WnWlar(x 收益e euc текс=n"
   };
 }

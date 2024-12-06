@@ -149,8 +149,10 @@ export default class ar_sa implements LangLocalization {
     'upgrade.multiverse': 'الكون المتعدد',
     'upgrade.multiversal_portal': 'بوابة متعددة الأكوان',
     'upgrade.idleverse': "ايدلفيرس",
+    'upgrade.cortex_earning': "كسب المال من شركة كورتيكس",
     "upgrade.reality_console": "وحدة التحكم الواقعية",
     'upgrade.clones': "استنساخ",
-    'upgrade.the_player': "أنت"
+    'upgrade.the_player': "أنت",
+    'upgrade.error': "WnWlar(x 收益e euc текс=n"
   };
 }

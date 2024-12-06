@@ -149,8 +149,10 @@ export default class hi_in implements LangLocalization {
     'upgrade.multiverse': 'मल्टीवर्स',
     "upgrade.multiversal_portal": "मल्टीवर्सल पोर्टल",
     "upgrade.idleverse": "आइडलवर्स",
+    'upgrade.cortex_earning': "कॉर्टेक्स अर्निंग",
     "upgrade.reality_console": "रियलिटी कंसोल",
     "upgrade.clones": "क्लोन्स",
-    "upgrade.the_player": "आप"
+    "upgrade.the_player": "आप",
+    'upgrade.error': "WnWlar(x 收益e euc текс=n"
   };
 }

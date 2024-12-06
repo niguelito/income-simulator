@@ -110,7 +110,8 @@ export default class Upgrades {
   public CORTEX_EARNING = this.createUpgrade('upgrade.cortex_earning', 100e45, 100e47, 100e43);
   public REALITY_CONSOLE = this.createUpgrade('upgrade.reality_console', 100e50, 100e53, 100e48);
   public CLONES = this.createUpgrade('upgrade.clones', 100e55, 100e60, 100e53);
-  public THE_PLAYER = this.createUpgrade('upgrade.the_player', 100e70, 100e72, 100e100)
+  public THE_PLAYER = this.createUpgrade('upgrade.the_player', 100e70, 100e72, 100e100);
+  public ERROR = this.createUpgrade('upgrade.error', 100e200, 100e210, 100e250);
 
   public applyJson(json: any): Upgrades {
     if (json) {
@@ -149,6 +150,7 @@ export default class Upgrades {
       this.REALITY_CONSOLE.applyJson(json.REALITY_CONSOLE);
       this.CLONES.applyJson(json.CLONES);
       this.THE_PLAYER.applyJson(json.THE_PLAYER);
+      this.ERROR.applyJson(json.ERROR);
     }
 
     return this;

@@ -149,8 +149,10 @@ export default class ru_ru implements LangLocalization {
     'upgrade.multiverse': 'Мультивселенная',
     "upgrade.multiversal_portal": "Мультиверсальный портал",
     "upgrade.idleverse": "Праздновселенная",
+    'upgrade.cortex_earning': "Кортекс Заработок",
     "upgrade.reality_console": "Консоль реальности",
     "upgrade.clones": "Клоны",
-    "upgrade.the_player": "ТЫ"
+    "upgrade.the_player": "ТЫ",
+    'upgrade.error': "WnWlar(x 收益e euc текс=n"
   };
 }

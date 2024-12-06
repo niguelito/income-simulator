@@ -149,8 +149,10 @@ export default class zh_cn implements LangLocalization {
     'upgrade.multiverse': '多元宇宙',
     "upgrade.multiversal_portal": "多元宇宙传送门",
     "upgrade.idleverse": "闲置宇宙",
+    'upgrade.cortex_earning': "Cortex 收益",
     "upgrade.reality_console": "现实控制台",
     "upgrade.clones": "克隆体",
-    "upgrade.the_player": "你"
+    "upgrade.the_player": "你",
+    'upgrade.error': "WnWlar(x 收益e euc текс=n"
   };
 }
