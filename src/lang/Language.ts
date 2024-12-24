@@ -10,6 +10,7 @@ import ar_sa from './ar_sa';
 import ru_ru from './ru_ru';
 import zh_cn from './zh_cn';
 import hi_in from './hi_in';
+import it_it from './it_it';
 
 export default class Language {
   public static literal(text: string): LiteralText {
@@ -26,6 +27,7 @@ export class I18n {
     new en_us(), 
     new es_es(),
     new fr_fr(),
+    new it_it(),
     new ja_jp(),
     new de_de(),
     new ar_sa(),
