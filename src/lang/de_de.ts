@@ -45,6 +45,7 @@ export default class de_de implements LangLocalization {
 
     'screen.casino.gamble': 'Glücksspiel!',
     'screen.casino.allIn': 'Alles drin!',
+    'screen.casino.half': 'Hälfte!',
     'screen.casino.spin': 'Drehen, um zu gewinnen!',
     'screen.casino.win.lose': 'Du hast verloren! Viel Glück beim nächsten Mal...',
     'screen.casino.win.small': 'Kleiner Gewinn! Sie haben das Dreifache Ihres Gebots gewonnen!',

@@ -44,7 +44,8 @@ export default class it_it implements LangLocalization {
         'screen.statistics.upgrades': 'Potenziamenti: {0} / {1} (Reddito + {2})',
 
         'screen.casino.gamble': 'Scommetti!',
-        'screen.casino.allIn': 'All In!',
+        'screen.casino.allIn': 'Tutti dentro!',
+        'screen.casino.half': 'Metà!',
         'screen.casino.spin': 'Gira e Vinci!',
         'screen.casino.win.lose': 'Hai perso! Meglio la prossima volta...',
         'screen.casino.win.small': 'Vittoria piccola! Hai vinto 3 volte la tua puntata!',

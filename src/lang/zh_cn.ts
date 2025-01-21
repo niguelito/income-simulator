@@ -45,6 +45,7 @@ export default class zh_cn implements LangLocalization {
 
     'screen.casino.gamble': '赌一把！',
     'screen.casino.allIn': '全压！',
+    'screen.casino.half': '一半!',
     'screen.casino.spin': '旋转赢取！',
     'screen.casino.win.lose': '你输了！下次好运...',
     'screen.casino.win.small': '小赢！你赢得了投注的3倍！',

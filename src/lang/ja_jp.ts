@@ -45,6 +45,7 @@ export default class ja_jp implements LangLocalization {
 
     'screen.casino.gamble': 'ギャンブル！',
     'screen.casino.allIn': 'すべてを賭ける！',
+    'screen.casino.half': '半分!',
     'screen.casino.spin': 'スピンして勝利！',
     'screen.casino.win.lose': '負けました！次はがんばりましょう...',
     'screen.casino.win.small': '小さな勝利！賭け金の3倍の勝利！',

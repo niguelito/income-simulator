@@ -45,6 +45,7 @@ export default class hi_in implements LangLocalization {
 
     'screen.casino.gamble': 'जुआ!',
     'screen.casino.allIn': 'सब कुछ!',
+    'screen.casino.half': 'आधा!',
     'screen.casino.spin': 'जीतने के लिए घूमें!',
     'screen.casino.win.lose': 'तुम हार गए! अगली बार भाग्य आजमाएं...',
     'screen.casino.win.small': 'छोटी जीत! आपने अपनी बोली का 3 गुणा जीता है!',

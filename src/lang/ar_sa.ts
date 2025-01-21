@@ -45,6 +45,7 @@ export default class ar_sa implements LangLocalization {
     
     'screen.casino.gamble': 'مقامرة!',
     'screen.casino.allIn': 'الكل في!',
+    'screen.casino.half': 'نصف!',
     'screen.casino.spin': 'دور لتفوز!',
     'screen.casino.win.lose': 'لقد خسرت! حظ أوفر في المرة القادمة...',
     'screen.casino.win.small': 'فوز صغير! لقد فزت بثلاثة أضعاف عرضك!',

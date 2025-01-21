@@ -16,6 +16,7 @@
 
             <button @click="gamble" v-bind:disabled="isGambling">{{ Language.translatable("screen.casino.gamble") }}</button>
             <button @click="allIn" v-bind:disabled="isGambling">{{ Language.translatable("screen.casino.allIn") }}</button>
+            <button @click="gambleHalf" v-bind:disabled="isGambling">{{ Language.translatable("screen.casino.half") }}</button>
 
             <p>{{ winMessage }}</p>
         </div>

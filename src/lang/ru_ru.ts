@@ -45,6 +45,7 @@ export default class ru_ru implements LangLocalization {
 
     'screen.casino.gamble': 'Играть!',
     'screen.casino.allIn': 'Всё!',
+    'screen.casino.half': 'Половина!',
     'screen.casino.spin': 'Крутить, чтобы выиграть!',
     'screen.casino.win.lose': 'Вы проиграли! Удачи в следующий раз...',
     'screen.casino.win.small': 'Маленький выигрыш! Вы выиграли 3 раза свою ставку!',

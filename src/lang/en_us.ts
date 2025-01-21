@@ -45,6 +45,7 @@ export default class en_us implements LangLocalization {
 
     'screen.casino.gamble': 'Gamble!',
     'screen.casino.allIn': 'All In!',
+    'screen.casino.half': 'Half!',
     'screen.casino.spin': 'Spin to Win!',
     'screen.casino.win.lose': 'You lost! Better luck next time...',
     'screen.casino.win.small': 'Small win! You won 3x your bid!',

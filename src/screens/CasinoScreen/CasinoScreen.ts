@@ -40,6 +40,10 @@ export default defineComponent({
             this.symbol2 = win[1];
             this.symbol3 = win[2];
         },
+        gambleHalf() {
+            this.bidAmount = Math.floor(this.state.money.amount / 2);
+            this.gamble();
+        },
         allIn() {
             this.bidAmount = Math.floor(this.state.money.amount);
             this.gamble();
