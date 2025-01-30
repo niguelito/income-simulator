@@ -13,20 +13,16 @@ export default class NumberFormatter {
                 this.format.push(ii + i);
             }
         }
-        alert(this.formatRaw(Math.pow(9999, 100)));
     }
 
     public static formatText(value: number): Component {
-        return Language.literal(this.formatRaw(value));
-    }
-
-    public static formatRaw(value: number): string {
         this.resolveFormat();
         
-        if (value < 1000000) return value.toLocaleString();
+        if (value < 1000000) return Language.literal(value.toLocaleString());
 
         var base = 0,
 		notationValue = '';
+		if (!isFinite(value)) return Language.translatable("screen.money.infinity");
 		if (value >= 1000000)
 		{
 			value /= 1000;
@@ -35,9 +31,9 @@ export default class NumberFormatter {
 				value /= 1000;
 				base++;
 			}
-			if (base >= this.format.length) return "Infinity"; 
+			if (base >= this.format.length) return Language.translatable("screen.money.infinity"); 
             else notationValue = this.format[base];
 		}
-		return ( Math.round(value * 1000) / 1000 ) + " " + notationValue;
+		return Language.literal(( Math.round(value * 1000) / 1000 ) + " " + notationValue);
     }
 }
