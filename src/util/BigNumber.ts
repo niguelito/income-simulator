@@ -9,6 +9,8 @@ export default class BigNumber {
     constructor(value: number, i: number) {
         this.value = value;
         this.i = i;
+
+        console.log(this.maxValue);
     }
 
     public format(): string {
