@@ -112,7 +112,7 @@ export default class Upgrades {
   public CLONES = this.createUpgrade('upgrade.clones', 100e55, 100e60, 100e53);
   public THE_PLAYER = this.createUpgrade('upgrade.the_player', 100e70, 100e72, 100e100);
   public ERROR = this.createUpgrade('upgrade.error', 100e125, 100e130, 100e148);
-  public UNACHIEVABLE = this.createUpgrade('upgrade.unachievable', 100e220, 100e230, 100e300);
+  public UNACHIEVABLE = this.createUpgrade('upgrade.unachievable', 100e220, 100e230, 100e295);
 
   public applyJson(json: any): Upgrades {
     if (json) {

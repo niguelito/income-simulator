@@ -23,17 +23,17 @@ export default class NumberFormatter {
         var base = 0,
 		notationValue = '';
 		if (!isFinite(value)) return Language.translatable("screen.money.infinity");
-		if (value >= 1000000)
-		{
+		if (value >= 1000000) {
+            let i = 0;
 			value /= 1000;
-			while(Math.round(value) >= 1000)
-			{
+			while(Math.round(value) >= 1000 && i < this.format.length) {
 				value /= 1000;
 				base++;
+                i++;
 			}
-			if (base >= this.format.length) return Language.translatable("screen.money.infinity"); 
-            else notationValue = this.format[base];
+            notationValue = this.format[Math.min(base, this.format.length - 1)];
 		}
-		return Language.literal(( Math.round(value * 1000) / 1000 ) + " " + notationValue);
+        if (value < 1000) return Language.literal(( Math.round(value * 1000) / 1000 ) + " " + notationValue);
+        else return Language.literal(( this.formatText(value).resolveText() ) + " " + notationValue);
     }
 }
