@@ -22,7 +22,6 @@ export default class NumberFormatter {
 
         var base = 0,
 		notationValue = '';
-		if (!isFinite(value)) return Language.translatable("screen.money.infinity");
 		if (value >= 1000000) {
             let i = 0;
 			value /= 1000;
@@ -33,7 +32,8 @@ export default class NumberFormatter {
 			}
             notationValue = this.format[Math.min(base, this.format.length - 1)];
 		}
+        if (!isFinite(value)) return Language.translatable("screen.money.infinity");
         if (value < 1000) return Language.literal(( Math.round(value * 1000) / 1000 ) + " " + notationValue);
-        else return Language.literal(( this.formatText(value).resolveText() ) + " " + notationValue);
+        return Language.literal(( this.formatText(value).resolveText() ) + " " + notationValue);
     }
 }
