@@ -156,6 +156,12 @@ export default class CasinoAlgorithm {
 
     static generate(): CasinoSymbol[] {
         return [
+            this.casinoSymbols[18],
+            this.casinoSymbols[18],
+            this.casinoSymbols[18],
+        ]
+    
+        return [
             this.casinoSymbols[Math.floor(Math.random() * this.casinoSymbols.length)],
             this.casinoSymbols[Math.floor(Math.random() * this.casinoSymbols.length)],
             this.casinoSymbols[Math.floor(Math.random() * this.casinoSymbols.length)],
