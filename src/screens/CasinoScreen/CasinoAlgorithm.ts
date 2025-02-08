@@ -40,86 +40,86 @@ export interface CasinoSymbol {
 
 export default class CasinoAlgorithm {
     static casinoSymbols: CasinoSymbol[] = [
-        {
-            symbol: "🍒",
-            status: SymbolStatus.MATCHING,
-            id: 0,
-        },
-        {
-            symbol: "🍋",
-            status: SymbolStatus.MATCHING,
-            id: 1,
-        },
-        {
-            symbol: "🍇",
-            status: SymbolStatus.MATCHING,
-            id: 2,
-        },
-        {
-            symbol: "🍕",
-            status: SymbolStatus.MATCHING,
-            id: 3,
-        },
-        {
-            symbol: "🍘",
-            status: SymbolStatus.MATCHING,
-            id: 4,
-        },
-        {
-            symbol: "🍙",
-            status: SymbolStatus.MATCHING,
-            id: 5,
-        },
-        {
-            symbol: "🍮",
-            status: SymbolStatus.MATCHING,
-            id: 6,
-        },
-        {
-            symbol: "🍯",
-            status: SymbolStatus.MATCHING,
-            id: 7,
-        },
-        {
-            symbol: "🍬",
-            status: SymbolStatus.MATCHING,
-            id: 8,
-        },
-        {
-            symbol: "🥨",
-            status: SymbolStatus.MATCHING,
-            id: 9
-        },
-        {
-            symbol: "🥛",
-            status: SymbolStatus.MATCHING,
-            id: 17
-        },
-        {
-            symbol: "🥝",
-            status: SymbolStatus.MATCHING,
-            id: 18
-        },
-        {
-            symbol: "🍫",
-            status: SymbolStatus.MATCHING,
-            id: 19
-        },
-        {
-            symbol: "⚀",
-            status: SymbolStatus.DICE,
-            id: 10,
-        },
-        {
-            symbol: "⚁",
-            status: SymbolStatus.DICE,
-            id: 11,
-        },
-        {
-            symbol: "⚂",
-            status: SymbolStatus.DICE,
-            id: 12,
-        },
+        // {
+        //     symbol: "🍒",
+        //     status: SymbolStatus.MATCHING,
+        //     id: 0,
+        // },
+        // {
+        //     symbol: "🍋",
+        //     status: SymbolStatus.MATCHING,
+        //     id: 1,
+        // },
+        // {
+        //     symbol: "🍇",
+        //     status: SymbolStatus.MATCHING,
+        //     id: 2,
+        // },
+        // {
+        //     symbol: "🍕",
+        //     status: SymbolStatus.MATCHING,
+        //     id: 3,
+        // },
+        // {
+        //     symbol: "🍘",
+        //     status: SymbolStatus.MATCHING,
+        //     id: 4,
+        // },
+        // {
+        //     symbol: "🍙",
+        //     status: SymbolStatus.MATCHING,
+        //     id: 5,
+        // },
+        // {
+        //     symbol: "🍮",
+        //     status: SymbolStatus.MATCHING,
+        //     id: 6,
+        // },
+        // {
+        //     symbol: "🍯",
+        //     status: SymbolStatus.MATCHING,
+        //     id: 7,
+        // },
+        // {
+        //     symbol: "🍬",
+        //     status: SymbolStatus.MATCHING,
+        //     id: 8,
+        // },
+        // {
+        //     symbol: "🥨",
+        //     status: SymbolStatus.MATCHING,
+        //     id: 9
+        // },
+        // {
+        //     symbol: "🥛",
+        //     status: SymbolStatus.MATCHING,
+        //     id: 17
+        // },
+        // {
+        //     symbol: "🥝",
+        //     status: SymbolStatus.MATCHING,
+        //     id: 18
+        // },
+        // {
+        //     symbol: "🍫",
+        //     status: SymbolStatus.MATCHING,
+        //     id: 19
+        // },
+        // {
+        //     symbol: "⚀",
+        //     status: SymbolStatus.DICE,
+        //     id: 10,
+        // },
+        // {
+        //     symbol: "⚁",
+        //     status: SymbolStatus.DICE,
+        //     id: 11,
+        // },
+        // {
+        //     symbol: "⚂",
+        //     status: SymbolStatus.DICE,
+        //     id: 12,
+        // },
         {
             symbol: "⚃",
             status: SymbolStatus.DICE,
@@ -155,12 +155,6 @@ export default class CasinoAlgorithm {
     }
 
     static generate(): CasinoSymbol[] {
-        return [
-            this.casinoSymbols[18],
-            this.casinoSymbols[18],
-            this.casinoSymbols[18],
-        ]
-    
         return [
             this.casinoSymbols[Math.floor(Math.random() * this.casinoSymbols.length)],
             this.casinoSymbols[Math.floor(Math.random() * this.casinoSymbols.length)],
