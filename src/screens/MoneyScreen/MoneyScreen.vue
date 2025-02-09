@@ -12,7 +12,7 @@
 
     <div id="extra-clicks">
         <p>{{ Language.translatable('screen.money.extra') }}</p>
-        <p>{{ Language.translatable('screen.money.extra.amount', Math.round(state.extraClicks.clicks * 100) / 100, Math.round(state.extraClicks.multiplier * 10) / 10) }}</p>
+        <p>{{ Language.translatable('screen.money.extra.amount', NumberFormatter.formatText(state.extraClicks.clicks), Math.round(state.extraClicks.multiplier * 10) / 10) }}</p>
         <p><button 
             id="use" 
             @click="() => { state.extraClicks.use(state); $forceUpdate() }"

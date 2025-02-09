@@ -22,18 +22,23 @@ export default class NumberFormatter {
 
         var base = 0,
 		notationValue = '';
+        let v = value;
 		if (value >= 1000000) {
             let i = 0;
-			value /= 1000;
-			while(Math.round(value) >= 1000 && i < this.format.length) {
-				value /= 1000;
+			v /= 1000;
+			while(Math.round(v) >= 1000 && i < this.format.length) {
+				v /= 1000;
 				base++;
                 i++;
 			}
             notationValue = this.format[Math.min(base, this.format.length - 1)];
 		}
+
+        if (v >= 1000) {
+            return Language.literal(( this.formatText(v).resolveText() ) + " " + notationValue)
+        }
+
         if (!isFinite(value)) return Language.translatable("screen.money.infinity");
-        if (value < 1000) return Language.literal(( Math.round(value * 1000) / 1000 ) + " " + notationValue);
-        return Language.literal(( this.formatText(value).resolveText() ) + " " + notationValue);
+        return Language.literal(( Math.round(v * 1000) / 1000 ) + " " + notationValue);
     }
 }
