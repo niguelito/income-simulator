@@ -115,17 +115,17 @@ export default class Upgrades {
   public ERROR = this.createUpgrade('upgrade.error', new BigNumber("100e128"), new BigNumber("100e130"), new BigNumber("100e148"));
   public UNACHIEVABLE = this.createUpgrade('upgrade.unachievable', new BigNumber("100e229"), new BigNumber("100e230"), new BigNumber("100e245"));
   public THE_CREATOR = this.createUpgrade('upgrade.the_creator', new BigNumber("100e270"), new BigNumber("100e272"), new BigNumber("100e290"))
-  public XENOVERSE = this.createUpgrade('upgrade.xenoverse', new BigNumber("100e328"), new BigNumber("100e330"), new BigNumber("100e320"))
-  public TOUCH_GRASS = this.createUpgrade('upgrade.touch_grass', new BigNumber("100e380"), new BigNumber("100e390"), new BigNumber("100e330"));
-  public QUANTUM_SUPERPOSITION = this.createUpgrade('upgrade.quantum_superposition', new BigNumber("100e440"), new BigNumber("100e450"), new BigNumber("100e420"));
+  public XENOVERSE = this.createUpgrade('upgrade.xenoverse', new BigNumber("100e328"), new BigNumber("100e330"), new BigNumber("100e350"))
+  public TOUCH_GRASS = this.createUpgrade('upgrade.touch_grass', new BigNumber("100e380"), new BigNumber("100e390"), new BigNumber("100e390"));
+  public QUANTUM_SUPERPOSITION = this.createUpgrade('upgrade.quantum_superposition', new BigNumber("100e440"), new BigNumber("100e450"), new BigNumber("100e450"));
   public THE_CODE = this.createUpgrade('upgrade.the_code', new BigNumber("100e500"), new BigNumber("100e501"), new BigNumber("100e490"));
-  public THE_PROGRAMMER = this.createUpgrade('upgrade.the_programmer', new BigNumber("100e530"), new BigNumber("100e531"), new BigNumber("100e525"));
-  public PROGRAMMING_LANGUAGE = this.createUpgrade('upgrade.programming_language', new BigNumber("100e558"), new BigNumber("100e560"), new BigNumber("100e554"));
-  public THE_OS = this.createUpgrade('upgrade.the_os', new BigNumber("100e600"), new BigNumber("100e602"), new BigNumber("100e600"));
-  public THE_COMPILER = this.createUpgrade('upgrade.the_compiler', new BigNumber("100e657"), new BigNumber("100e660"), new BigNumber("100e650"));
-  public ALL_THE_COMPILERS = this.createUpgrade('upgrade.all_the_compilers', new BigNumber("100e700"), new BigNumber("100e702"), new BigNumber("100e690"));
+  public THE_PROGRAMMER = this.createUpgrade('upgrade.the_programmer', new BigNumber("100e530"), new BigNumber("100e531"), new BigNumber("100e555"));
+  public PROGRAMMING_LANGUAGE = this.createUpgrade('upgrade.programming_language', new BigNumber("100e558"), new BigNumber("100e560"), new BigNumber("100e594"));
+  public THE_OS = this.createUpgrade('upgrade.the_os', new BigNumber("100e600"), new BigNumber("100e602"), new BigNumber("100e630"));
+  public THE_COMPILER = this.createUpgrade('upgrade.the_compiler', new BigNumber("100e657"), new BigNumber("100e660"), new BigNumber("100e690"));
+  public ALL_THE_COMPILERS = this.createUpgrade('upgrade.all_the_compilers', new BigNumber("100e700"), new BigNumber("100e702"), new BigNumber("100e740"));
   public QUANTUM_SUPERCOMPUTER = this.createUpgrade('upgrade.quantum_supercomputer', new BigNumber("100e800"), new BigNumber("100e803"), new BigNumber("100e798"));
-  public REALITY = this.createUpgrade("upgrade.reality", new BigNumber("100e950"), new BigNumber("100e951"), new BigNumber("100e949"));
+  public REALITY = this.createUpgrade("upgrade.reality", new BigNumber("100e1001"), new BigNumber("100e1003"), new BigNumber("100e1300"));
 
   public applyJson(json: any): Upgrades {
     if (json) {
