@@ -8,13 +8,12 @@ createApp(App).mount('#app');
 try {
     BigNumber.config({
         DECIMAL_PLACES: 40,
-        RANGE: [-30, 1000]
+        RANGE: [-30, 5000]
     });
 } catch (err) {
     console.error("BigNumber is being stupid");
     console.error(err);
 }
-
 
 let a = false;
 
