@@ -179,6 +179,7 @@ export default class Upgrades {
       this.ALL_THE_COMPILERS.applyJson(json.ALL_THE_COMPILERS);
       this.QUANTUM_SUPERCOMPUTER.applyJson(json.QUANTUM_SUPERCOMPUTER);
       this.REALITY.applyJson(json.REALITY);
+      this.ACTUALLY_UNACHIEVABLE.applyJson(json.ACTUALLY_UNACHIEVABLE)
     }
 
     return this;
