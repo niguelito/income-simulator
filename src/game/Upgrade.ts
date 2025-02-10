@@ -166,6 +166,18 @@ export default class Upgrades {
       this.THE_PLAYER.applyJson(json.THE_PLAYER);
       this.ERROR.applyJson(json.ERROR);
       this.UNACHIEVABLE.applyJson(json.UNACHIEVABLE);
+      this.THE_CREATOR.applyJson(json.THE_CREATOR);
+      this.XENOVERSE.applyJson(json.XENOVERSE);
+      this.TOUCH_GRASS.applyJson(json.TOUCH_GRASS);
+      this.QUANTUM_SUPERPOSITION.applyJson(json.QUANTUM_SUPERPOSITION);
+      this.THE_CODE.applyJson(json.THE_CODE);
+      this.THE_PROGRAMMER.applyJson(json.THE_PROGRAMMER);
+      this.PROGRAMMING_LANGUAGE.applyJson(json.PROGRAMMING_LANGUAGE);
+      this.THE_OS.applyJson(json.THE_OS);
+      this.THE_COMPILER.applyJson(json.THE_COMPILER);
+      this.ALL_THE_COMPILERS.applyJson(json.ALL_THE_COMPILERS);
+      this.QUANTUM_SUPERCOMPUTER.applyJson(json.QUANTUM_SUPERCOMPUTER);
+      this.REALITY.applyJson(json.REALITY);
     }
 
     return this;
