@@ -171,6 +171,7 @@ export default class zh_cn implements LangLocalization {
     'upgrade.the_compiler': "编译器",
     'upgrade.all_the_compilers': "所有编译器",
     'upgrade.quantum_supercomputer': "量子超级计算机",
-    'upgrade.reality': "现实"
+    'upgrade.reality': "现实",
+    'upgrade.actually_unachievable': "Actually Unachievable"
   };
 }

@@ -167,6 +167,7 @@ export default class ar_sa implements LangLocalization {
     'upgrade.the_compiler': "المترجم",
     'upgrade.all_the_compilers': "كل المترجمين",
     'upgrade.quantum_supercomputer': "الحاسوب الكمي",
-    'upgrade.reality': "الواقع"
+    'upgrade.reality': "الواقع",
+    'upgrade.actually_unachievable': "Actually Unachievable"
   };
 }

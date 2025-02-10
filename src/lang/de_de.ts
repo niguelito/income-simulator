@@ -171,6 +171,7 @@ export default class de_de implements LangLocalization {
     'upgrade.the_compiler': "Der Compiler",
     'upgrade.all_the_compilers': "Alle Compiler",
     'upgrade.quantum_supercomputer': "Quanten-Supercomputer",
-    'upgrade.reality': "Realität"
+    'upgrade.reality': "Realität",
+    'upgrade.actually_unachievable': "Actually Unachievable"
   };
 }

@@ -171,7 +171,8 @@ export default class fr_fr implements LangLocalization {
     'upgrade.the_compiler': "Le Compilateur",
     'upgrade.all_the_compilers': "Tous Les Compilateurs",
     'upgrade.quantum_supercomputer': "Superordinateur Quantique",
-    'upgrade.reality': "Réalité"
+    'upgrade.reality': "Réalité",
+    'upgrade.actually_unachievable': "Actually Unachievable"
   };
 }
 

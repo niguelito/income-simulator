@@ -171,6 +171,7 @@ export default class hi_in implements LangLocalization {
     'upgrade.the_compiler': "कंपाइलर",
     'upgrade.all_the_compilers': "सभी कंपाइलर",
     'upgrade.quantum_supercomputer': "क्वांटम सुपरकंप्यूटर",
-    'upgrade.reality': "वास्तविकता"
+    'upgrade.reality': "वास्तविकता",
+    'upgrade.actually_unachievable': "Actually Unachievable"
   };
 }

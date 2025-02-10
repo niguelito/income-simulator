@@ -171,6 +171,7 @@ export default class it_it implements LangLocalization {
         'upgrade.the_compiler': "The Compiler",
         'upgrade.all_the_compilers': "All The Compilers",
         'upgrade.quantum_supercomputer': "Quantum Supercomputer",
-        'upgrade.reality': "Reality"
+        'upgrade.reality': "Reality",
+        'upgrade.actually_unachievable': "Actually Unachievable"
     }
 }

@@ -171,6 +171,7 @@ export default class ja_jp implements LangLocalization {
     'upgrade.the_compiler': "コンパイラ",
     'upgrade.all_the_compilers': "すべてのコンパイラ",
     'upgrade.quantum_supercomputer': "量子スーパーコンピューター",
-    'upgrade.reality': "現実"
+    'upgrade.reality': "現実",
+    'upgrade.actually_unachievable': "Actually Unachievable"
   };
 }

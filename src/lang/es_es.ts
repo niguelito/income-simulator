@@ -171,6 +171,6 @@ export default class es_es implements LangLocalization {
     'upgrade.the_compiler': "El Compilador",
     'upgrade.all_the_compilers': "Todos Los Compiladores",
     'upgrade.quantum_supercomputer': "Supercomputadora Cuántica",
-    'upgrade.reality': "Realidad"
+    'upgrade.reality': "Realidad",
   };
 }

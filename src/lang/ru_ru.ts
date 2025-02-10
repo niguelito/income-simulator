@@ -171,6 +171,7 @@ export default class ru_ru implements LangLocalization {
     'upgrade.the_compiler': "Компилятор",
     'upgrade.all_the_compilers': "Все Компиляторы",
     'upgrade.quantum_supercomputer': "Квантовый Суперкомпьютер",
-    'upgrade.reality': "Реальность"
+    'upgrade.reality': "Реальность",
+    'upgrade.actually_unachievable': "Actually Unachievable"
   };
 }
