@@ -6,6 +6,7 @@ import Upgrades from './Upgrade';
 import { instanceToPlain } from 'class-transformer';
 import IncomeBonus from './IncomeBonus';
 import { I18n } from '../lang/Language';
+import BigNumber from 'bignumber.js';
 
 export default interface GameState {
   money: Money;
@@ -45,8 +46,8 @@ export class GameSaveHandler {
 
   public static createNewSave(): GameState {
     return {
-      money: new Money(0, 0),
-      extraClicks: new ExtraClicks(0, 0),
+      money: new Money(new BigNumber(0), new BigNumber(0)),
+      extraClicks: new ExtraClicks(new BigNumber(0), 0),
       incomeBonus: new IncomeBonus(0),
       prestige: new Prestige(0, 0),
       upgrades: new Upgrades(),
@@ -68,12 +69,30 @@ export class GameSaveHandler {
 
   public static export(state: GameState): string {
     const r = instanceToPlain(state)
+
+    r.money.amount = state.money.amount.toString();
+    r.money.earnedAllTime = state.money.earnedAllTime.toString();
+
+    r.extraClicks.clicks = state.extraClicks.clicks.toString();
+
     const json = JSON.stringify(r);
     return this.encrypt(json);
   }
 
   private static resolveOrZero(a: number | undefined): number {
     return a ? a : 0;
+  }
+
+  private static roundIf(a: number | string): number | string {
+    try {
+      return (a as number).toString();
+    } catch (ignored) {
+      return a;
+    }
+  }
+
+  private static resolveOrZeroBig(a: string | number | undefined): BigNumber {
+    return a ? new BigNumber(this.roundIf(a)) : new BigNumber(0);
   }
 
   public static parseSave(s: string, willHandleError?: boolean): GameState {
@@ -83,9 +102,9 @@ export class GameSaveHandler {
       const a = JSON.parse(r);
 
       return {
-        money: new Money(this.resolveOrZero(a.money.amount), this.resolveOrZero(a.money.earnedAllTime)),
+        money: new Money(this.resolveOrZeroBig(a.money.amount), this.resolveOrZeroBig(a.money.earnedAllTime)),
         extraClicks: new ExtraClicks(
-          this.resolveOrZero(a.extraClicks.clicks),
+          this.resolveOrZeroBig(a.extraClicks.clicks),
           this.resolveOrZero(a.extraClicks.multiplier)
         ),
         incomeBonus: new IncomeBonus(this.resolveOrZero(a.incomeBonus.amount)),

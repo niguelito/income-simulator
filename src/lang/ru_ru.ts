@@ -118,6 +118,10 @@ export default class ru_ru implements LangLocalization {
     'wealthmessage.number': 'Это вообще число?!',
     'wealthmessage.intlimit': 'Вы превысили лимит целых чисел больше раз, чем диаметр Земли в сантиметрах!',
     'wealthmessage.money': 'Теперь это только вы и ваши деньги...',
+    'wealthmessage.atoms': "У вас больше денег, чем субатомных частиц в обозримой вселенной!",
+    'wealthmessage.neutrinos': "У вас больше денег, чем нейтрино в обозримой вселенной!",
+    'wealthmessage.quantumstates': "У вас больше денег, чем возможных квантовых состояний для каждой частицы во вселенной!",
+    'wealthmessage.infinity': "Не каждый день у кого-то бывает столько денег, что это даже нельзя выразить числом",
 
     'upgrade.water_bottle': 'Бутылка воды',
     'upgrade.backpack': 'Рюкзак',
@@ -154,7 +158,19 @@ export default class ru_ru implements LangLocalization {
     "upgrade.reality_console": "Консоль реальности",
     "upgrade.clones": "Клоны",
     "upgrade.the_player": "ТЫ",
-    'upgrade.error': "WnWlar(x 收益e euc текс=n",
-    'upgrade.unachievable': "Недостижимо"
+    'upgrade.error': "Ошибка",
+    'upgrade.unachievable': "Недостижимо",
+    'upgrade.the_creator': "Создатель",
+    'upgrade.xenoverse': "Ксеновселенная",
+    'upgrade.touch_grass': "Потрогай Траву (Пожалуйста)",
+    'upgrade.quantum_superposition': "Квантовая Суперпозиция",
+    'upgrade.the_code': "Код",
+    'upgrade.the_programmer': "Программист",
+    'upgrade.programming_language': "Язык Программирования",
+    'upgrade.the_os': "ОС",
+    'upgrade.the_compiler': "Компилятор",
+    'upgrade.all_the_compilers': "Все Компиляторы",
+    'upgrade.quantum_supercomputer': "Квантовый Суперкомпьютер",
+    'upgrade.reality': "Реальность"
   };
 }

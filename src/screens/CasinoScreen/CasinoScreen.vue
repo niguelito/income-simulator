@@ -1,7 +1,7 @@
 <template>
     <div :hidden="isHelpOpened">
         <h2>{{ Language.translatable("screen.casino") }}</h2>
-        <p>{{ Language.translatable("game.money", NumberFormatter.formatText(Math.floor(state.money.amount))) }}</p>
+        <p>{{ Language.translatable("game.money", NumberFormatter.formatText(state.money.amount.floor())) }}</p>
 
         <div id="casino">
             <h3 class="slot" v-text="symbol1.symbol"></h3>
@@ -10,7 +10,7 @@
         </div>
 
         <div id="bid">
-            <input type="number" v-model="bidAmount" min="1">
+            <input type="text" v-model="typeAmount" min="1">
             
             <br>
 

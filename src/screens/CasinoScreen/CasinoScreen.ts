@@ -4,6 +4,7 @@ import { StateCache } from "../../game/GameState";
 import NumberFormatter from "../../util/NumberFormatter";
 import CasinoAlgorithm, { SymbolStatus } from "./CasinoAlgorithm";
 import AppEvents from "../../AppEvents";
+import BigNumber from "bignumber.js";
 
 export default defineComponent({
     computed: {
@@ -17,7 +18,8 @@ export default defineComponent({
             NumberFormatter,
             CasinoAlgorithm,
             SymbolStatus,
-            bidAmount: 0,
+            typeAmount: "1",
+            bidAmount: new BigNumber(0),
             symbol1: CasinoAlgorithm.casinoSymbols[0],
             symbol2: CasinoAlgorithm.casinoSymbols[0],
             symbol3: CasinoAlgorithm.casinoSymbols[0],
@@ -41,18 +43,26 @@ export default defineComponent({
             this.symbol3 = win[2];
         },
         gambleHalf() {
-            this.bidAmount = Math.floor(this.state.money.amount / 2);
+            this.typeAmount = this.state.money.amount.div(2).floor().toString();
             this.gamble();
         },
         allIn() {
-            this.bidAmount = Math.floor(this.state.money.amount);
+            this.typeAmount = this.state.money.amount.floor().toString();
             this.gamble();
         },
         gamble() {
-            if (this.bidAmount == 0) return;
-            if (this.bidAmount > this.state.money.amount) return;
+            let bl = false;
+            try {
+                this.bidAmount = new BigNumber(this.typeAmount);
+            } catch (err) {
+                bl = true;
+            }
+            if (bl) return;
             
-            const bidding = Math.floor(this.bidAmount);
+            if (this.bidAmount.lessThan(0)) return;
+            if (this.bidAmount.greaterThan(this.state.money.amount)) return;
+            
+            const bidding = this.bidAmount.floor();
             
             this.state.money.spend(bidding);
 
@@ -96,7 +106,7 @@ export default defineComponent({
                     const result = CasinoAlgorithm.getWinAmount(win);
                     this.winMessage = CasinoAlgorithm.getWinningText(result);
 
-                    const newAmount = bidding * result;
+                    const newAmount = bidding.mul(result);
 
                     this.state.money.add(newAmount);
 

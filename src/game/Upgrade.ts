@@ -3,13 +3,14 @@ import Component from "../lang/Component";
 import Language from "../lang/Language";
 import GameState from "./GameState";
 import AppEvents from "../AppEvents";
+import BigNumber from "bignumber.js";
 
 @Exclude()
 export class IncomeUpgrade {
   public name: Component;
-  public price: number;
-  public unlocksAt: number;
-  public modifier: number;
+  public price: BigNumber;
+  public unlocksAt: BigNumber;
+  public modifier: BigNumber;
 
   @Expose()
   public hasUnlocked: boolean;
@@ -19,9 +20,9 @@ export class IncomeUpgrade {
 
   constructor(
     name: Component,
-    price: number,
-    unlocksAt: number,
-    modifier: number
+    price: BigNumber,
+    unlocksAt: BigNumber,
+    modifier: BigNumber
   ) {
     this.name = name;
     this.price = price;
@@ -31,8 +32,8 @@ export class IncomeUpgrade {
     this.hasPurchased = false;
   }
 
-  public canUnlock(money: number): boolean {
-    const a = money >= this.unlocksAt;
+  public canUnlock(money: BigNumber): boolean {
+    const a = money.greaterThanOrEqualTo(this.unlocksAt);
     return a;
   }
 
@@ -50,13 +51,13 @@ export class IncomeUpgrade {
     return true;
   }
 
-  public canAfford(money: number): boolean {
-    const a = money >= this.price;
+  public canAfford(money: BigNumber): boolean {
+    const a = money.greaterThanOrEqualTo(this.price);
     return a;
   }
 
-  public applyModifier(inc: number): number {
-    return inc + this.modifier;
+  public applyModifier(inc: BigNumber): BigNumber {
+    return inc.add(this.modifier);
   }
 
   public applyJson(json: any) {
@@ -76,43 +77,55 @@ export class IncomeUpgrade {
 }
 
 export default class Upgrades {
-  public WATER_BOTTLE = this.createUpgrade("upgrade.water_bottle", 10, 20, 1);
-  public BACKPACK = this.createUpgrade("upgrade.backpack", 50, 100, 1);
-  public CART = this.createUpgrade("upgrade.cart", 150, 200, 1);
-  public BICYCLE = this.createUpgrade("upgrade.bicycle", 500, 1000, 2);
-  public SMARTPHONE = this.createUpgrade("upgrade.smartphone", 900, 1500, 3);
-  public LAPTOP = this.createUpgrade("upgrade.laptop", 1450, 3000, 5);
-  public PLASMA_TV = this.createUpgrade("upgrade.plasma_tv", 2750, 5000, 8);
-  public MOTORCYCLE = this.createUpgrade("upgrade.motorcycle", 17_500, 25_000, 10);
-  public CAR = this.createUpgrade("upgrade.car", 30_000, 50_000, 10);
-  public PORCHE_CAYENNE = this.createUpgrade("upgrade.porche_cayenne", 75_500, 150_000, 20);
-  public CONDO = this.createUpgrade("upgrade.condo", 375_000, 600_000, 50);
-  public HOUSE = this.createUpgrade("upgrade.house", 1_200_000, 2_000_000, 250);
-  public MANSION = this.createUpgrade("upgrade.mansion", 12_300_000, 25_000_000, 1_000);
-  public ROLLS_ROYCE = this.createUpgrade("upgrade.rolls_royce", 26_200_000, 50_000_000, 2_000);
-  public BOEING_PLANE = this.createUpgrade("upgrade.boeing", 125_400_000, 300_000_000, 4_000);
-  public ROCKET = this.createUpgrade("upgrade.rocket", 726_200_000, 1_500_000_000, 3_000);
-  public SPACE_SHUTTLE = this.createUpgrade("upgrade.space_shuttle", 1_700_000_000, 3_000_000_000, 5_000);
-  public SATURN_V = this.createUpgrade("upgrade.saturn_v", 5_600_000_000, 10_000_000_000, 10_000);
-  public CLOUDFLARE = this.createUpgrade("upgrade.cloudflare", 27_600_000_000, 75_000_000_000, 15_000);
-  public WALMART = this.createUpgrade("upgrade.walmart", 437_160_000_000, 700_000_000_000, 25_000);
-  public TESLA = this.createUpgrade("upgrade.tesla", 663_760_000_000, 1_200_000_000_000, 45_000);
-  public MOON_LANDING = this.createUpgrade("upgrade.moon_landing", 934_300_000_000, 2_000_000_000_000, 100_000);
-  public GOOGLE = this.createUpgrade("upgrade.google", 1_900_000_000_000, 4_000_000_000_000, 10_000_000);
-  public MICROSOFT = this.createUpgrade("upgrade.microsoft", 2_800_000_000_000, 7_500_000_000_000, 1_000_000_000);
-  public APPLE = this.createUpgrade("upgrade.apple", 3_400_000_000_000, 10_000_000_000_000, 10_000_000_000);
-  public MARS = this.createUpgrade("upgrade.mars", 21_400_000_000_000, 50_000_000_000_000, 15_000_000_000_000);
-  public SOLAR_SYSTEM = this.createUpgrade("upgrade.solar_system", 403_123e12, 750e14, 1e11);
-  public UNIVERSE = this.createUpgrade("upgrade.universe", 403_123e18, 1_500e21, 100e19);
-  public MULTIVERSE = this.createUpgrade("upgrade.multiverse", 500_123e30, 500_123e33, 100e29)
-  public MULTIVERSAL_PORTAL = this.createUpgrade("upgrade.multiversal_portal", 100e38, 100e39, 100e33);
-  public IDLEVERSE = this.createUpgrade("upgrade.idleverse", 100e40, 100e41, 100e38);
-  public CORTEX_EARNING = this.createUpgrade('upgrade.cortex_earning', 100e45, 100e47, 100e43);
-  public REALITY_CONSOLE = this.createUpgrade('upgrade.reality_console', 100e50, 100e53, 100e48);
-  public CLONES = this.createUpgrade('upgrade.clones', 100e55, 100e60, 100e53);
-  public THE_PLAYER = this.createUpgrade('upgrade.the_player', 100e70, 100e72, 100e100);
-  public ERROR = this.createUpgrade('upgrade.error', 100e125, 100e130, 100e148);
-  public UNACHIEVABLE = this.createUpgrade('upgrade.unachievable', 100e220, 100e230, 100e295);
+  public WATER_BOTTLE = this.createUpgrade("upgrade.water_bottle", new BigNumber(10), new BigNumber(20), new BigNumber(1));
+  public BACKPACK = this.createUpgrade("upgrade.backpack", new BigNumber(50), new BigNumber(100), new BigNumber(1));
+  public CART = this.createUpgrade("upgrade.cart", new BigNumber(150), new BigNumber(200), new BigNumber(1));
+  public BICYCLE = this.createUpgrade("upgrade.bicycle", new BigNumber(500), new BigNumber(1000), new BigNumber(2));
+  public SMARTPHONE = this.createUpgrade("upgrade.smartphone", new BigNumber(900), new BigNumber(1500), new BigNumber(3));
+  public LAPTOP = this.createUpgrade("upgrade.laptop", new BigNumber(1450), new BigNumber(3000), new BigNumber(5));
+  public PLASMA_TV = this.createUpgrade("upgrade.plasma_tv", new BigNumber(2750), new BigNumber(5000), new BigNumber(8));
+  public MOTORCYCLE = this.createUpgrade("upgrade.motorcycle", new BigNumber(17500), new BigNumber(25_000), new BigNumber(10));
+  public CAR = this.createUpgrade("upgrade.car", new BigNumber(30_000), new BigNumber(50_000), new BigNumber(10));
+  public PORCHE_CAYENNE = this.createUpgrade("upgrade.porche_cayenne", new BigNumber(75_500), new BigNumber(150_000), new BigNumber(20));
+  public CONDO = this.createUpgrade("upgrade.condo", new BigNumber(375_000), new BigNumber(600_000), new BigNumber(50));
+  public HOUSE = this.createUpgrade("upgrade.house", new BigNumber(1_200_000), new BigNumber(2_000_000), new BigNumber(250));
+  public MANSION = this.createUpgrade("upgrade.mansion", new BigNumber(12_300_000), new BigNumber(25_000_000), new BigNumber(1_000));
+  public ROLLS_ROYCE = this.createUpgrade("upgrade.rolls_royce", new BigNumber(26_200_000), new BigNumber(50_000_000), new BigNumber(2_000));
+  public BOEING_PLANE = this.createUpgrade("upgrade.boeing", new BigNumber(125_400_000), new BigNumber(300_000_000), new BigNumber(4_000));
+  public ROCKET = this.createUpgrade("upgrade.rocket", new BigNumber(726_200_000), new BigNumber(1_500_000_000), new BigNumber(3_000));
+  public SPACE_SHUTTLE = this.createUpgrade("upgrade.space_shuttle", new BigNumber(1_700_000_000), new BigNumber(3_000_000_000), new BigNumber(5_000));
+  public SATURN_V = this.createUpgrade("upgrade.saturn_v", new BigNumber(5_600_000_000), new BigNumber(10_000_000_000), new BigNumber(10_000));
+  public CLOUDFLARE = this.createUpgrade("upgrade.cloudflare", new BigNumber(27_600_000_000), new BigNumber(75_000_000_000), new BigNumber(15_000));
+  public WALMART = this.createUpgrade("upgrade.walmart", new BigNumber(437_160_000_000), new BigNumber(700_000_000_000), new BigNumber(25_000));
+  public TESLA = this.createUpgrade("upgrade.tesla", new BigNumber(663_760_000_000), new BigNumber(1_200_000_000_000), new BigNumber(45_000));
+  public MOON_LANDING = this.createUpgrade("upgrade.moon_landing", new BigNumber(934_300_000_000), new BigNumber(2_000_000_000_000), new BigNumber(100_000));
+  public GOOGLE = this.createUpgrade("upgrade.google", new BigNumber(1_900_000_000_000), new BigNumber(4_000_000_000_000), new BigNumber(10_000_000));
+  public MICROSOFT = this.createUpgrade("upgrade.microsoft", new BigNumber(2_800_000_000_000), new BigNumber(7_500_000_000_000), new BigNumber(1_000_000_000));
+  public APPLE = this.createUpgrade("upgrade.apple", new BigNumber(3_400_000_000_000), new BigNumber(10_000_000_000_000), new BigNumber(10_000_000_000));
+  public MARS = this.createUpgrade("upgrade.mars", new BigNumber(21_400_000_000_000), new BigNumber(50_000_000_000_000), new BigNumber(15_000_000_000_000));
+  public SOLAR_SYSTEM = this.createUpgrade("upgrade.solar_system", new BigNumber("403123e12"), new BigNumber("750e14"), new BigNumber("1e11"));
+  public UNIVERSE = this.createUpgrade("upgrade.universe", new BigNumber("403123e18"), new BigNumber("1500e21"), new BigNumber("100e19"));
+  public MULTIVERSE = this.createUpgrade("upgrade.multiverse", new BigNumber("500123e30"), new BigNumber("500123e33"), new BigNumber("100e29"))
+  public MULTIVERSAL_PORTAL = this.createUpgrade("upgrade.multiversal_portal", new BigNumber("100e38"), new BigNumber("100e39"), new BigNumber("100e33"));
+  public IDLEVERSE = this.createUpgrade("upgrade.idleverse", new BigNumber("100e40"), new BigNumber("100e41"), new BigNumber("100e38"));
+  public CORTEX_EARNING = this.createUpgrade('upgrade.cortex_earning', new BigNumber("100e45"), new BigNumber("100e47"), new BigNumber("100e43"));
+  public REALITY_CONSOLE = this.createUpgrade('upgrade.reality_console', new BigNumber("100e50"), new BigNumber("100e53"), new BigNumber("100e48"));
+  public CLONES = this.createUpgrade('upgrade.clones', new BigNumber("100e55"), new BigNumber("100e60"), new BigNumber("100e53"));
+  public THE_PLAYER = this.createUpgrade('upgrade.the_player', new BigNumber("100e70"), new BigNumber("100e72"), new BigNumber("100e100"));
+  public ERROR = this.createUpgrade('upgrade.error', new BigNumber("100e128"), new BigNumber("100e130"), new BigNumber("100e148"));
+  public UNACHIEVABLE = this.createUpgrade('upgrade.unachievable', new BigNumber("100e229"), new BigNumber("100e230"), new BigNumber("100e245"));
+  public THE_CREATOR = this.createUpgrade('upgrade.the_creator', new BigNumber("100e270"), new BigNumber("100e272"), new BigNumber("100e290"))
+  public XENOVERSE = this.createUpgrade('upgrade.xenoverse', new BigNumber("100e328"), new BigNumber("100e330"), new BigNumber("100e320"))
+  public TOUCH_GRASS = this.createUpgrade('upgrade.touch_grass', new BigNumber("100e380"), new BigNumber("100e390"), new BigNumber("100e330"));
+  public QUANTUM_SUPERPOSITION = this.createUpgrade('upgrade.quantum_superposition', new BigNumber("100e440"), new BigNumber("100e450"), new BigNumber("100e420"));
+  public THE_CODE = this.createUpgrade('upgrade.the_code', new BigNumber("100e500"), new BigNumber("100e501"), new BigNumber("100e490"));
+  public THE_PROGRAMMER = this.createUpgrade('upgrade.the_programmer', new BigNumber("100e530"), new BigNumber("100e531"), new BigNumber("100e525"));
+  public PROGRAMMING_LANGUAGE = this.createUpgrade('upgrade.programming_language', new BigNumber("100e558"), new BigNumber("100e560"), new BigNumber("100e554"));
+  public THE_OS = this.createUpgrade('upgrade.the_os', new BigNumber("100e600"), new BigNumber("100e602"), new BigNumber("100e600"));
+  public THE_COMPILER = this.createUpgrade('upgrade.the_compiler', new BigNumber("100e657"), new BigNumber("100e660"), new BigNumber("100e650"));
+  public ALL_THE_COMPILERS = this.createUpgrade('upgrade.all_the_compilers', new BigNumber("100e700"), new BigNumber("100e702"), new BigNumber("100e690"));
+  public QUANTUM_SUPERCOMPUTER = this.createUpgrade('upgrade.quantum_supercomputer', new BigNumber("100e800"), new BigNumber("100e803"), new BigNumber("100e798"));
+  public REALITY = this.createUpgrade("upgrade.reality", new BigNumber("100e950"), new BigNumber("100e951"), new BigNumber("100e949"));
 
   public applyJson(json: any): Upgrades {
     if (json) {
@@ -158,11 +171,11 @@ export default class Upgrades {
     return this;
   }
 
-  private createUpgrade(name: string, price: number, unlocksAt: number, modifier: number) {
+  private createUpgrade(name: string, price: BigNumber, unlocksAt: BigNumber, modifier: BigNumber) {
     return new IncomeUpgrade(Language.translatable(name), price, unlocksAt, modifier);
   }
 
-  applyUpgrades(inc: number) {
+  applyUpgrades(inc: BigNumber) {
     let n = inc;
 
     for (const key in this) {
@@ -190,7 +203,7 @@ export default class Upgrades {
     return list;
   }
 
-  checkUnlocks(money: number): boolean {
+  checkUnlocks(money: BigNumber): boolean {
     let unlocked = false;
     
     for (const upgrade of this.getList()) {
@@ -214,11 +227,11 @@ export default class Upgrades {
     return n;
   }
 
-  getGlobalModifier(): number {
-    let n = 0;
+  getGlobalModifier(): BigNumber {
+    let n = new BigNumber(0);
 
     for (const upgrade of this.getList()) {
-      if (upgrade.hasPurchased) n += upgrade.modifier;
+      if (upgrade.hasPurchased) n = n.add(upgrade.modifier);
     }
 
     return n;

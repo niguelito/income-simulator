@@ -6,7 +6,7 @@
             <h3>{{ Language.translatable('screen.money') }}</h3>
             <p>{{ Language.translatable("game.money", NumberFormatter.formatText(state.money.amount)) }}</p>
             <p>{{ Language.translatable("screen.statistics.allTime", NumberFormatter.formatText(state.money.earnedAllTime)) }}</p>
-            <p>{{ Language.translatable("screen.statistics.allTimeSpent", NumberFormatter.formatText(state.money.earnedAllTime - state.money.amount)) }}</p>
+            <p>{{ Language.translatable("screen.statistics.allTimeSpent", NumberFormatter.formatText(state.money.earnedAllTime.sub(state.money.amount))) }}</p>
         </div>
 
         <div id="income">
@@ -20,4 +20,3 @@
 </template>
 
 <script lang="ts" src="./StatisticsScreen"></script>
-<style lang="css" src="./StatisticsScreen.css"></style>

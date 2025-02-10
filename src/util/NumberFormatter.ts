@@ -1,3 +1,4 @@
+import BigNumber from "bignumber.js";
 import Component from "../lang/Component";
 import Language from "../lang/Language";
 
@@ -15,30 +16,34 @@ export default class NumberFormatter {
         }
     }
 
-    public static formatText(value: number): Component {
+    public static fix(value: number): number {
+        return Math.round(value * 1000) / 1000;
+    }
+
+    public static formatText(value: BigNumber, bl = true): Component {
         this.resolveFormat();
         
-        if (value < 1000000) return Language.literal(value.toLocaleString());
+        if (value.lessThan(1000000) && bl) return Language.literal(value.toNumber().toLocaleString());
 
         var base = 0,
 		notationValue = '';
         let v = value;
-		if (value >= 1000000) {
+		if (value.greaterThanOrEqualTo(1000)) {
             let i = 0;
-			v /= 1000;
-			while(Math.round(v) >= 1000 && i < this.format.length) {
-				v /= 1000;
+			v = v.div(1000);
+			while(v.round().greaterThanOrEqualTo(1000) && i < this.format.length) {
+				v = v.div(1000);
 				base++;
                 i++;
 			}
             notationValue = this.format[Math.min(base, this.format.length - 1)];
 		}
 
-        if (v >= 1000) {
-            return Language.literal(( this.formatText(v).resolveText() ) + " " + notationValue)
+        if (v.greaterThanOrEqualTo(1000)) {
+            return Language.literal(( this.formatText(v, false).resolveText() ) + " " + notationValue)
         }
 
-        if (!isFinite(value)) return Language.translatable("screen.money.infinity");
-        return Language.literal(( Math.round(v * 1000) / 1000 ) + " " + notationValue);
+        if (!value.isFinite()) return Language.translatable("screen.money.infinity");
+        return Language.literal(( Math.round(v.toNumber() * 1000) / 1000 ) + " " + notationValue);
     }
 }

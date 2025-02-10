@@ -1,8 +1,20 @@
 import { createApp } from 'vue';
 import './style.css';
 import App from './App.vue';
+import BigNumber from 'bignumber.js';
 
 createApp(App).mount('#app');
+
+try {
+    BigNumber.config({
+        DECIMAL_PLACES: 40,
+        RANGE: [-30, 1000]
+    });
+} catch (err) {
+    console.error("BigNumber is being stupid");
+    console.error(err);
+}
+
 
 let a = false;
 

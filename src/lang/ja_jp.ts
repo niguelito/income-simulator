@@ -117,7 +117,11 @@ export default class ja_jp implements LangLocalization {
     'wealthmessage.universe': 'あなたは宇宙を所有しています！',
     'wealthmessage.number': 'それは本当に数字ですか？！',
     'wealthmessage.intlimit': 'あなたは地球の直径をセンチメートル単位で超える回数だけ整数制限を超えました！',
-    'wealthmessage.money': 'これからはあなたとあなたのお金だけです...',
+    'wealthmessage.money': 'これからはあなたとお金だけです...',
+    'wealthmessage.atoms': "あなたは、観測可能な宇宙の亜原子粒子よりも多くのお金を持っています！",
+    'wealthmessage.neutrinos': "あなたは、観測可能な宇宙のニュートリノよりも多くのお金を持っています！",
+    'wealthmessage.quantumstates': "あなたは、宇宙の各粒子が取りうる量子状態よりも多くのお金を持っています！",
+    'wealthmessage.infinity': "数字で表すことさえできないほどのお金を持つなんて、そうそうあることではありません。",
 
     'upgrade.water_bottle': '水筒',
     'upgrade.backpack': 'バックパック',
@@ -152,9 +156,21 @@ export default class ja_jp implements LangLocalization {
     "upgrade.idleverse": "アイドルバース",
     'upgrade.cortex_earning': "皮質収益",
     "upgrade.reality_console": "リアリティコンソール",
-    "upgrade.clones": "クローン",
-    "upgrade.the_player": "あなた",
+    'upgrade.clones': "クローン",
+    'upgrade.the_player': "あなた",
     'upgrade.error': "WnWlar(x 收益e euc текс=n",
-    'upgrade.unachievable': "達成不可能"
+    'upgrade.unachievable': "達成不可能",
+    'upgrade.the_creator': "創造主",
+    'upgrade.xenoverse': "異世界",
+    'upgrade.touch_grass': "草に触れる（お願い）",
+    'upgrade.quantum_superposition': "量子重ね合わせ",
+    'upgrade.the_code': "コード",
+    'upgrade.the_programmer': "プログラマー",
+    'upgrade.programming_language': "プログラミング言語",
+    'upgrade.the_os': "OS",
+    'upgrade.the_compiler': "コンパイラ",
+    'upgrade.all_the_compilers': "すべてのコンパイラ",
+    'upgrade.quantum_supercomputer': "量子スーパーコンピューター",
+    'upgrade.reality': "現実"
   };
 }

@@ -2,46 +2,51 @@
 import { defineComponent } from 'vue';
 import Component from '../lang/Component';
 import Language from '../lang/Language';
+import BigNumber from 'bignumber.js';
 
 interface Msg {
     message: Component,
-    minAmount: number
+    minAmount: BigNumber
 }
 
 const messages: Msg[] = [
-    createMessage("wealthmessage.homeless", 0),
-    createMessage("wealthmessage.broke", 500),
-    createMessage("wealthmessage.tipi", 1_000),
-    createMessage("wealthmessage.shack", 5_000),
-    createMessage("wealthmessage.mrbreast", 10_000),
-    createMessage("wealthmessage.minimumWage", 30_000),
-    createMessage("wealthmessage.taxes", 50_000),
-    createMessage("wealthmessage.cheapApartment", 70_000),
-    createMessage("wealthmessage.mrbeast", 100_000),
-    createMessage("wealthmessage.rent", 200_000),
-    createMessage("wealthmessage.apple", 600_000),
-    createMessage("wealthmessage.house", 1_100_000),
-    createMessage("wealthmessage.taylorswift", 5_000_000),
-    createMessage("wealthmessage.rollsroyce", 11_000_000),
-    createMessage("wealthmessage.beverlyhills", 23_500_000),
-    createMessage("wealthmessage.yacht", 78_000_000),
-    createMessage("wealthmessage.squidgames", 500_000_000),
-    createMessage("wealthmessage.monaLisa", 780_000_000),
-    createMessage("wealthmessage.grass", 1_000_000_000),
-    createMessage("wealthmessage.africa", 300_000_000_000),
-    createMessage("wealthmessage.racism", 1_200_000_000_000),
-    createMessage("wealthmessage.earth", 500_500_000_000_000),
-    createMessage("wealthmessage.wtf", 1_000_000_000_000_000),
-    createMessage("wealthmessage.mars", 400_000_000_000_000_000.0),
-    createMessage('wealthmessage.solarSystem', 1_000_000_000_000_000_000.0),
-    createMessage('wealthmessage.zeros', 1_000_000_000_000_000_000_000.0),
-    createMessage('wealthmessage.universe', 1_000_000_000_000_000_000_000_000.0),
-    createMessage("wealthmessage.number", 1_000_000_000_000_000_000_000_000_000.0),
-    createMessage("wealthmessage.intlimit", 1_000_000_000_000_000_000_000_000_000_000.0),
-    createMessage("wealthmessage.money", 1_000_000_000_000_000_000_000_000_000_000_000.0)
+    createMessage("wealthmessage.homeless", new BigNumber(0)),
+    createMessage("wealthmessage.broke", new BigNumber(500)),
+    createMessage("wealthmessage.tipi", new BigNumber(1000)),
+    createMessage("wealthmessage.shack", new BigNumber(5000)),
+    createMessage("wealthmessage.mrbreast", new BigNumber(10000)),
+    createMessage("wealthmessage.minimumWage", new BigNumber(30000)),
+    createMessage("wealthmessage.taxes", new BigNumber(50000)),
+    createMessage("wealthmessage.cheapApartment", new BigNumber(70000)),
+    createMessage("wealthmessage.mrbeast", new BigNumber(100000)),
+    createMessage("wealthmessage.rent", new BigNumber(200000)),
+    createMessage("wealthmessage.apple", new BigNumber(600000)),
+    createMessage("wealthmessage.house", new BigNumber(11e5)),
+    createMessage("wealthmessage.taylorswift", new BigNumber(5e6)),
+    createMessage("wealthmessage.rollsroyce", new BigNumber(11e6)),
+    createMessage("wealthmessage.beverlyhills", new BigNumber(23e6)),
+    createMessage("wealthmessage.yacht", new BigNumber(78e6)),
+    createMessage("wealthmessage.squidgames", new BigNumber(5e8)),
+    createMessage("wealthmessage.monaLisa", new BigNumber(78e7)),
+    createMessage("wealthmessage.grass", new BigNumber(1e9)),
+    createMessage("wealthmessage.africa", new BigNumber(3e11)),
+    createMessage("wealthmessage.racism", new BigNumber(12e11)),
+    createMessage("wealthmessage.earth", new BigNumber(5005e11)),
+    createMessage("wealthmessage.wtf", new BigNumber(1e15)),
+    createMessage("wealthmessage.mars", new BigNumber(4e17)),
+    createMessage('wealthmessage.solarSystem', new BigNumber(1e18)),
+    createMessage('wealthmessage.zeros', new BigNumber(1e21)),
+    createMessage('wealthmessage.universe', new BigNumber(1e24)),
+    createMessage("wealthmessage.number", new BigNumber(1e27)),
+    createMessage("wealthmessage.intlimit", new BigNumber(1e30)),
+    createMessage("wealthmessage.money", new BigNumber(1e33)),
+    createMessage("wealthmessage.atoms", new BigNumber(10e80)),
+    createMessage("wealthmessage.neutrinos", new BigNumber(10e130)),
+    createMessage("wealthmessage.quantumstates", new BigNumber("100e860")),
+    createMessage("wealthmessage.infinity", new BigNumber("100e997"))
 ]
 
-function createMessage(message: string, minAmount: number): Msg {
+function createMessage(message: string, minAmount: BigNumber): Msg {
     return {
         message: Language.translatable(message),
         minAmount
@@ -51,7 +56,7 @@ function createMessage(message: string, minAmount: number): Msg {
 export default defineComponent({
     props: {
         amount: {
-            type: Number,
+            type: BigNumber,
             required: true
         }
     },
@@ -63,7 +68,7 @@ export default defineComponent({
             let i = 0;
 
             while (message == null) {
-                if (a[i].minAmount <= this.amount) message = a[i];
+                if (a[i].minAmount.lessThanOrEqualTo(this.amount)) message = a[i];
                 i++;
             }
 

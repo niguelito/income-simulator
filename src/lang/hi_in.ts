@@ -117,7 +117,11 @@ export default class hi_in implements LangLocalization {
     'wealthmessage.universe': 'आपने यूनिवर्स को अपने पास!',
     'wealthmessage.number': 'क्या यह एक संख्या है?!',
     'wealthmessage.intlimit': 'आपने पृथ्वी के व्यास की गुणा गिने से अधिक बार पूर्णांक सीमा को पार किया है!',
-    'wealthmessage.money': 'अब सिर्फ तुम और तुम्हारे पैसे हैं...',
+    'wealthmessage.money': 'अब सिर्फ आप और आपका पैसा हैं...',
+    'wealthmessage.atoms': "आपके पास ब्रह्मांड में उपपरमाण्विक कणों से अधिक पैसा है!",
+    'wealthmessage.neutrinos': "आपके पास ब्रह्मांड में न्यूट्रिनो से अधिक पैसा है!",
+    'wealthmessage.quantumstates': "आपके पास ब्रह्मांड में प्रत्येक कण के लिए संभावित क्वांटम राज्यों से अधिक पैसा है!",
+    'wealthmessage.infinity': "यह रोज़ की बात नहीं है कि किसी के पास इतना पैसा हो कि उसे संख्या से भी व्यक्त न किया जा सके!",
 
     'upgrade.water_bottle': 'पानी की बोतल',
     'upgrade.backpack': 'बैकपैक',
@@ -155,6 +159,18 @@ export default class hi_in implements LangLocalization {
     "upgrade.clones": "क्लोन्स",
     "upgrade.the_player": "आप",
     'upgrade.error': "WnWlar(x 收益e euc текс=n",
-    'upgrade.unachievable': "पहुंच से बाहर का"
+    'upgrade.unachievable': "पहुंच से बाहर का",
+    'upgrade.the_creator': "निर्माता",
+    'upgrade.xenoverse': "ज़ेनोवर्स",
+    'upgrade.touch_grass': "घास छुओ (कृपया)",
+    'upgrade.quantum_superposition': "क्वांटम सुपरपोजिशन",
+    'upgrade.the_code': "कोड",
+    'upgrade.the_programmer': "प्रोग्रामर",
+    'upgrade.programming_language': "प्रोग्रामिंग भाषा",
+    'upgrade.the_os': "ओएस",
+    'upgrade.the_compiler': "कंपाइलर",
+    'upgrade.all_the_compilers': "सभी कंपाइलर",
+    'upgrade.quantum_supercomputer': "क्वांटम सुपरकंप्यूटर",
+    'upgrade.reality': "वास्तविकता"
   };
 }

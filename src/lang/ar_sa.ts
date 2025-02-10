@@ -152,9 +152,21 @@ export default class ar_sa implements LangLocalization {
     'upgrade.idleverse': "ايدلفيرس",
     'upgrade.cortex_earning': "كسب المال من شركة كورتيكس",
     "upgrade.reality_console": "وحدة التحكم الواقعية",
-    'upgrade.clones': "استنساخ",
+    'upgrade.clones': "الاستنساخ",
     'upgrade.the_player': "أنت",
     'upgrade.error': "WnWlar(x 收益e euc текс=n",
-    'upgrade.unachievable': "غير قابل للتحقيق"
+    'upgrade.unachievable': "غير قابل للتحقيق",
+    'upgrade.the_creator': "الخالق",
+    'upgrade.xenoverse': "زينوفيرس",
+    'upgrade.touch_grass': "المس العشب (من فضلك)",
+    'upgrade.quantum_superposition': "التراكب الكمي",
+    'upgrade.the_code': "الشيفرة",
+    'upgrade.the_programmer': "المبرمج",
+    'upgrade.programming_language': "لغة البرمجة",
+    'upgrade.the_os': "نظام التشغيل",
+    'upgrade.the_compiler': "المترجم",
+    'upgrade.all_the_compilers': "كل المترجمين",
+    'upgrade.quantum_supercomputer': "الحاسوب الكمي",
+    'upgrade.reality': "الواقع"
   };
 }

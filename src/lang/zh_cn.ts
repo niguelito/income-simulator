@@ -118,6 +118,10 @@ export default class zh_cn implements LangLocalization {
     'wealthmessage.number': '那甚至算得上是个数字吗？！',
     'wealthmessage.intlimit': '你超过整数限制的次数超过了地球直径的厘米数！',
     'wealthmessage.money': '现在只有你和你的钱了...',
+    'wealthmessage.atoms': "你拥有的钱比可观测宇宙中的亚原子粒子还多！",
+    'wealthmessage.neutrinos': "你拥有的钱比可观测宇宙中的中微子还多！",
+    'wealthmessage.quantumstates': "你拥有的钱比宇宙中每个粒子可能的量子态还多！",
+    'wealthmessage.infinity': "不是每天都有人拥有如此多的钱，甚至无法用数字来表达",
 
     'upgrade.water_bottle': '水瓶',
     'upgrade.backpack': '背包',
@@ -152,9 +156,21 @@ export default class zh_cn implements LangLocalization {
     "upgrade.idleverse": "闲置宇宙",
     'upgrade.cortex_earning': "Cortex 收益",
     "upgrade.reality_console": "现实控制台",
-    "upgrade.clones": "克隆体",
-    "upgrade.the_player": "你",
+    'upgrade.clones': "克隆体",
+    'upgrade.the_player': "玩家",
     'upgrade.error': "WnWlar(x 收益e euc текс=n",
-    'upgrade.unachievable': "无法实现"
+    'upgrade.unachievable': "无法实现",
+    'upgrade.the_creator': "创世者",
+    'upgrade.xenoverse': "异界",
+    'upgrade.touch_grass': "摸摸草（求你了）",
+    'upgrade.quantum_superposition': "量子叠加态",
+    'upgrade.the_code': "代码",
+    'upgrade.the_programmer': "程序员",
+    'upgrade.programming_language': "编程语言",
+    'upgrade.the_os': "操作系统",
+    'upgrade.the_compiler': "编译器",
+    'upgrade.all_the_compilers': "所有编译器",
+    'upgrade.quantum_supercomputer': "量子超级计算机",
+    'upgrade.reality': "现实"
   };
 }

@@ -118,6 +118,10 @@ export default class it_it implements LangLocalization {
         'wealthmessage.number': 'È davvero un numero?!',
         'wealthmessage.intlimit': 'Hai superato il limite degli interi più volte del diametro della Terra in centimetri!',
         'wealthmessage.money': 'Siete rimasti solo tu e i tuoi soldi…',
+        'wealthmessage.atoms': "You have more money than subatomic particles in the observable universe!",
+        'wealthmessage.neutrinos': "You have more money than neutrinos in the observable universe!",
+        'wealthmessage.quantumstates': "You have more money that possible quantum states for each particle in the universe!",
+        'wealthmessage.infinity': "It's not everyday that someone has so much money that it can't even be expressed with a number",
 
         'upgrade.water_bottle': 'Bottiglia d’acqua',
         'upgrade.backpack': 'Zaino',
@@ -155,6 +159,18 @@ export default class it_it implements LangLocalization {
         'upgrade.clones': 'Cloni',
         'upgrade.the_player': 'TE',
         'upgrade.error': 'WnWlar(x 收益e euc текс=n',
-        'upgrade.unachievable': 'Irraggiungibile'
+        'upgrade.unachievable': 'Irraggiungibile',
+        'upgrade.the_creator': "The Creator",
+        'upgrade.xenoverse': "Xenoverse",
+        'upgrade.touch_grass': "Touch Grass (Please)",
+        'upgrade.quantum_superposition': "Quantum Superposition",
+        'upgrade.the_code': "The Code",
+        'upgrade.the_programmer': "The Programmer",
+        'upgrade.programming_language': "Programming Language",
+        'upgrade.the_os': "The OS",
+        'upgrade.the_compiler': "The Compiler",
+        'upgrade.all_the_compilers': "All The Compilers",
+        'upgrade.quantum_supercomputer': "Quantum Supercomputer",
+        'upgrade.reality': "Reality"
     }
 }

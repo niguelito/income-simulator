@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "bignumber.js": "^4.0.4",
     "class-transformer": "^0.5.1",
     "crypto-js": "^4.2.0",
     "pako": "^2.1.0",
