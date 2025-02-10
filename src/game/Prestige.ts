@@ -61,7 +61,8 @@ export default class Prestige {
     new BigNumber("1e900"),
     new BigNumber("1e930"),
     new BigNumber("1e960"),
-    new BigNumber("1e990")
+    new BigNumber("1e990"),
+    new BigNumber("1e1000")
   ];
 
   constructor(a: number, e: number) {
